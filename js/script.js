@@ -26,7 +26,7 @@ function formatSecondsToMMSS(seconds) {
 
 async function getSongs(folder){
   currFolder = folder;
-  let a = await fetch(`http://127.0.0.1:3000/${folder}/`)
+  let a = await fetch(`https://khushbu-github.github.io/Dhun-Music/${folder}/`)
   let response = await a.text();
   let div = document.createElement("div")
   div.innerHTML = response;
@@ -78,7 +78,7 @@ const playMusic = (track, pause=false) => {
 }
 
 async function displayAlbums() {
-  let a = await fetch(`http://127.0.0.1:3000/songs/`)
+  let a = await fetch(`https://khushbu-github.github.io/Dhun-Music/songs/`)
   let response = await a.text();
   let div = document.createElement("div")
   div.innerHTML = response;
@@ -90,7 +90,7 @@ async function displayAlbums() {
       if(e.href.includes("/songs")){
       let folder = e.href.split("/").slice(-2)[0]
       // Get the meta data of the folder
-      let a = await fetch(`http://127.0.0.1:3000/songs/${folder}/info.json`)
+      let a = await fetch(`https://khushbu-github.github.io/Dhun-Music/songs/${folder}/info.json`)
       let response = await a.json();
       console.log(response)
       cardContainer.innerHTML = cardContainer.innerHTML + `  <div data-folder="${folder}" class="card">
